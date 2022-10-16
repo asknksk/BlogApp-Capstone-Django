@@ -28,6 +28,7 @@ INSTALLED_APPS = [
 
     # myapps:
     'users',
+    'blog',
 
     # Third party apps:
     'drf_yasg',
