@@ -19,7 +19,7 @@ class Blog(models.Model):
   
     title = models.CharField(max_length=100)    
     content = models.TextField()
-    image = models.URLField(blank=True, default="https://gravatar.com/avatar/2074b7945e3c6c493b0b2b94b24c35c2?s=400&d=robohash&r=")
+    image = models.URLField(blank=True, default="https://i.picsum.photos/id/1066/400/300.jpg?hmac=KsSGWNXje7B9dXUx6O6QzUlD4m4NzUQkkUzoVk4xmHk")
     category = models.ForeignKey(Category, on_delete=models.PROTECT, blank=True, null=True)
     publish_date = models.DateTimeField(auto_now_add=True)
     last_updated = models.DateTimeField(auto_now=True)
@@ -28,20 +28,20 @@ class Blog(models.Model):
     status = models.CharField(max_length=10, choices=OPTIONS, default='d')
     slug = models.SlugField(blank=True, null=True)
 
-    # def __str__(self):
-    #     return self.title
+    def __str__(self):
+        return self.title
     
-    # def comment_count(self):
-    #     return self.comment_set.all().count()
+    def comment_count(self):
+        return self.comment_set.all().count()
     
-    # def view_count(self):
-    #     return self.postview_set.all().count()
+    def view_count(self):
+        return self.postview_set.all().count()
     
-    # def like_count(self):
-    #     return self.like_set.all().count()
+    def like_count(self):
+        return self.like_set.all().count()
     
-    # def comments(self):
-    #     return self.comment_set.all()
+    def comments(self):
+        return self.comment_set.all()
 
 class Comment(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="comment")
