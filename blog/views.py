@@ -41,8 +41,6 @@ class BlogView(ModelViewSet):
     def perform_destroy(self, instance):
         instance.delete()
     
-    
-    
     def retrieve(self, request, *args, **kwargs):
         instance = self.get_object()
         PostView.objects.create(post=instance,user=request.user)
