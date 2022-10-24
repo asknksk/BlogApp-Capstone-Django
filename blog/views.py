@@ -50,10 +50,6 @@ class BlogView(ModelViewSet):
 class CategoryView(ModelViewSet):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
-
-# class CommentView(ModelViewSet):
-#     queryset = Comment.objects.all()
-#     serializer_class = CommentSerializer
     
 @api_view(['GET',"POST"])
 def comment_list(request,pk):

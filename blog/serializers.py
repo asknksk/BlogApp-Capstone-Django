@@ -35,7 +35,7 @@ class BlogSerializer(serializers.ModelSerializer):
         fields = ('id', 'title', 'content', 'image', 'category', 'publish_date', 'author', 'status', 'slug', 'comments', 'likes','post_views',"comment_count")
     
     def create(self, validated_data):
-        author = User.objects.get(username=self.context['request'].data["user"])
+        author = User.objects.get(username=self.context['request'].user)
         validated_data['author'] = author
         return Blog.objects.create(**validated_data)
     
