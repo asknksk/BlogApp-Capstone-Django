@@ -32,9 +32,10 @@ class BlogView(ModelViewSet):
 
     def destroy(self, request, *args, **kwargs):
         instance = self.get_object()
-        if(request.user != instance.author):
-            message="You are not authorized to delete this blog"
-            return Response(message,status=status.HTTP_401_UNAUTHORIZED)
+      
+        # if(request.data["user_name"] != instance.author):
+        #     message="You are not authorized to delete this blog"
+        #     return Response(message,status=status.HTTP_401_UNAUTHORIZED)
         self.perform_destroy(instance)
         return Response(status=status.HTTP_204_NO_CONTENT)
 

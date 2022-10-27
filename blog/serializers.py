@@ -9,7 +9,7 @@ from operator import itemgetter
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
-        fields = ('name',)
+        fields = ('name', "id")
 
 class CommentSerializer(serializers.ModelSerializer):
     user=serializers.StringRelatedField(read_only=True)
