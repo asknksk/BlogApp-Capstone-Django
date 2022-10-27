@@ -40,7 +40,7 @@ class BlogSerializer(serializers.ModelSerializer):
         return Blog.objects.create(**validated_data)
     
     def get_likes(self, obj):
-        return Like.objects.filter(post=obj).count()
+        return list(Like.objects.filter(post=obj).values())
 
     def get_post_views(self, obj):
         return PostView.objects.filter(post=obj).count()

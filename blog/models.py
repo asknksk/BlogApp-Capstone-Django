@@ -38,7 +38,7 @@ class Blog(models.Model):
         return self.postview_set.all().count()
     
     def like_count(self):
-        return self.like_set.all().count()
+        return self.like_set.all()
     
     def comments(self):
         return self.comment_set.all()
