@@ -1,10 +1,7 @@
-from requests import Response
 from rest_framework import serializers
 from .models import Blog, Category, Comment, Like, PostView
 from django.contrib.auth.models import User
-from rest_framework import status
-from rest_framework.response import Response
-from operator import itemgetter
+
 
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:

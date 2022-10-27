@@ -1,6 +1,4 @@
 from django.urls import include, path
-# from .views import  TodoGetUpdateDelete, TodoListCreate, home
-# from .views import  home
 from rest_framework import routers
 
 from .views import BlogView, CategoryView, comment_list, like
